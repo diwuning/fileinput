@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.h.fileinput">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 获取MAC地址 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 下载图片到本地 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 手机拍照 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 视频录制播放 -->
+    <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> -->
+    <!-- <uses-permission android:name="android.permission.CAMERA" /> -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 硬件支持 -->
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <!-- <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission> -->
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission> -->
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
+    <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission> -->
+    <!-- 访问网络，网络定位需要上网 -->
+    <!-- <uses-permission android:name="android.permission.INTERNET" /> -->
+    <!-- SD卡读取权限，用户写入离线定位数据 -->
+    <!-- <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission> -->
+
+
+    <!-- 语音识别 start -->
+    <!-- <uses-permission android:name="android.permission.INTERNET" /> -->
+    <!-- <uses-permission android:name="android.permission.RECORD_AUDIO"/> -->
+    <!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/> -->
+    <!-- <uses-permission android:name="android.permission.READ_PHONE_STATE"/> -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES\" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.FORCE_STOP_PACKAGES" />
+
+    <application
+        android:name=".MyApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:sharedUserId="android.uid.system"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- SugarORM配置 -->
+        <meta-data
+            android:name="DATABASE"
+            android:value="user.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="1" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="com.example.sugartest" />
+
+        <!-- 百度地图的配置key -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="GxVKeLtaNFhTvpgHH4k1lXBb539VPjLx" />
+        <!-- 百度地图的service -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <!-- 百度语音识别 请填写真实的APP_ID API_KEY SECRET_KEY -->
+        <meta-data
+            android:name="com.baidu.speech.APP_ID"
+            android:value="8984068" />
+        <meta-data
+            android:name="com.baidu.speech.API_KEY"
+            android:value="FrxOpE63In7T22ngjILYl345" />
+        <meta-data
+            android:name="com.baidu.speech.SECRET_KEY"
+            android:value="b1ffc41781b71b4eb8a38114b243d4a5" />
+
+        <service
+            android:name="com.baidu.speech.VoiceRecognitionService"
+            android:exported="false" />
+
+        <activity
+            android:name="com.baidu.voicerecognition.android.ui.BaiduASRDigitalDialog"
+            android:configChanges="orientation|keyboardHidden|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog">
+            <intent-filter>
+                <action android:name="com.baidu.action.RECOGNIZE_SPEECH" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- end : baidu speech sdk -->
+        <!-- 语音识别 end -->
+        <!-- 百度语音识别 请填写真实的APP_ID API_KEY SECRET_KEY -->
+        <meta-data
+            android:name="com.baidu.speech.APP_ID"
+            android:value="8984068" />
+        <meta-data
+            android:name="com.baidu.speech.API_KEY"
+            android:value="FrxOpE63In7T22ngjILYl345" />
+        <meta-data
+            android:name="com.baidu.speech.SECRET_KEY"
+            android:value="b1ffc41781b71b4eb8a38114b243d4a5" />
+
+        <service
+            android:name="com.baidu.speech.VoiceRecognitionService"
+            android:exported="false" />
+
+        <activity
+            android:name="com.baidu.voicerecognition.android.ui.BaiduASRDigitalDialog"
+            android:configChanges="orientation|keyboardHidden|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog">
+            <intent-filter>
+                <action android:name="com.baidu.action.RECOGNIZE_SPEECH" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- end : baidu speech sdk -->
+        <!-- 语音识别 end -->
+
+
+        <!-- 图片上传 -->
+        <activity android:name=".MainActivity" />
+        <activity android:name=".AsyncTask.TestJsonPost" />
+        <!-- 图片下载 -->
+        <activity android:name=".filedownload.ImgDownActivity" />
+        <!-- 图像缩放及裁剪 -->
+        <activity android:name=".zoom.ZoomActivity" />
+        <!-- 手机摄像头功能测试 -->
+        <activity android:name=".cameratest.CameraActivity" />
+        <activity android:name=".seekbar.SeekBarActivity" />
+        <activity android:name=".Mp3Media.MpsPlayerActivity" />
+
+        <service android:name=".Mp3Media.PlayerService1" />
+
+        <activity android:name=".picturefusion.ImgFusionActivity" />
+        <activity android:name=".picture.PictureTestActivity" />
+        <!--
+        <receiver android:name=".Mp3Media.PlayerService1$MyReceiver">
+            <intent-filter>
+                <action android:name="com.h.fileinput.action.CTL_ACTION"></action>
+            </intent-filter>
+        </receiver>
+        -->
+        <activity android:name=".video.SurfaceActivity" />
+        <activity
+            android:name=".TestActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/CustomTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".videorecorder.RecorderActivity" />
+        <activity android:name=".recorder.Recorder2Activity" />
+        <activity android:name=".barcode.BarCodeActivity" />
+        <activity android:name=".baiduMap.AddressActivity" />
+        <activity android:name=".pay.PayDemoActivity" />
+        <activity android:name=".EasyRecyclerView.EasyRecyclerActivity" />
+        <activity android:name=".EasyRecyclerView.CommonRecyclerActivity" />
+        <activity android:name=".periscope.PeriscopeActivity" />
+        <activity android:name=".fontmanager.FontManageDemoActivity" />
+        <activity android:name=".voice.VoiceRecognition">
+            <intent-filter>
+                <action android:name="android.speech.action.RECOGNIZE_SPEECH" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".voice.BaiduVoiceActivity" />
+        <activity
+            android:name=".webviewvideo.WebViewVideoDemoActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity android:name=".line.LineDemoActivity" />
+        <activity android:name=".cameratest.ShowPicActivity" />
+        <activity android:name=".cameratest.test.MainActivity" />
+        <activity android:name=".cameratest.test.ShowPicture" />
+        <!-- 手机摄像头功能测试 -->
+        <activity android:name=".camera.CameraRecordActivity" />
+        <activity android:name=".camera1.CameRecordActivity" />
+        <activity android:name=".camera.RecordCameraActivity" />
+        <activity android:name=".cameratest.camerarecorder.CameraNormalActivity" />
+        <activity android:name=".picture.PicSpecialActivity" />
+        <activity android:name=".weixinrecorder.TakePicActivity" />
+        <activity android:name=".weixinrecorder.ShowPicActivity" />
+        <activity android:name=".GridAnimator.GridAnimteDemoActivity" />
+        <activity android:name=".AnalyzeHtml.AnalyzeHtmlActivity" />
+        <activity android:name=".dragtop.DragTopDemoActivity" />
+        <activity android:name=".dragtop.CoordinatorLayoutDemo" />
+
+        <service android:name=".easytouch.service.AuxiliaryService" />
+
+        <activity android:name=".easytouch.FloatMenuActivity" />
+        <activity
+            android:name=".userinfo.UserInfoActivity"
+            android:theme="@style/CardView.Dark" />
+        <activity android:name=".ListGridView.ListGridActivity" />
+        <activity android:name=".FragmentPager.FragmentPagerActivity" />
+        <activity android:name=".FragmentPager.MainFragmentActivity"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.h.fileinput.widget.DragTopLayout
+        android:id="@+id/dragLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/top_view"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:background="@color/cardview_dark_background"
+            android:gravity="center"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_marginTop="13dp"
+                android:layout_above="@+id/rl_tagHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/btn_otherLeft"
+                    android:visibility="gone"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/icon_back" />
+                <TextView
+                    android:id="@+id/tv_userNick"
+                    android:text="未命名"
+                    android:textSize="16sp"
+                    android:textColor="@color/text_white"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rl_tagHeader"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:id="@+id/ll_tags1"
+                    android:layout_toLeftOf="@+id/pUserHeader"
+                    android:orientation="vertical"
+                    android:gravity="end"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerVertical="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/tv_tag1"
+                        android:text="70后"
+                        style="@style/person_tag_text"
+                        android:background="@drawable/corner_trans_border"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_tag3"
+                        android:text="美食爱好者"
+                        style="@style/person_tag_text"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/corner_trans_border"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_tag5"
+                        android:text="宝宝妈"
+                        style="@style/person_tag_text"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/corner_trans_border"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <com.h.fileinput.widget.CircleView
+                    android:id="@+id/pUserHeader"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/zhongyuan"
+                    android:layout_width="92dp"
+                    android:layout_height="92dp" />
+                <LinearLayout
+                    android:id="@+id/ll_tags2"
+
+                    android:layout_toRightOf="@+id/pUserHeader"
+                    android:layout_marginLeft="10dp"
+
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/tv_tag2"
+                        android:text="四川料理"
+                        style="@style/person_tag_text"
+                        android:background="@drawable/corner_trans_border"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_tag4"
+                        android:text="家常菜"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        style="@style/person_tag_text"
+                        android:background="@drawable/corner_trans_border"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_tag6"
+                        android:text="70后"
+                        style="@style/person_tag_text"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/corner_trans_border"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </RelativeLayout>
+            <ImageView
+                android:id="@+id/tv_follow"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/icon_add_follow"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="42dp"
+                android:layout_height="14dp" />
+            <LinearLayout
+                android:id="@+id/ll_summaryBottom"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/tv_followNum"
+                        android:text="0"
+                        style="@style/person_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:text="关注"
+                        style="@style/person_text1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <View
+                    android:background="@color/text_white"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="1dp"
+                    android:layout_height="30dp"></View>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/tv_fansNum"
+                        android:text="0"
+                        style="@style/person_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:text="粉丝"
+                        style="@style/person_text1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+        <WebView
+            android:id="@+id/myWebview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </WebView>
+    </com.h.fileinput.widget.DragTopLayout>
+</RelativeLayout>

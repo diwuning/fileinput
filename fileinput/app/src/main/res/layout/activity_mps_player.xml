@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@drawable/bg_mp3"
+    android:layout_gravity="center_horizontal"
+    tools:context="com.h.fileinput.Mp3Media.MpsPlayerActivity">
+    <TextView
+        android:id="@+id/tv_mp3Title"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:textSize="15sp"
+        android:text="歌曲列表"
+        android:textColor="@color/text_white"
+        android:gravity="center_vertical"/>
+    <ListView
+        android:id="@+id/lv_mp3list"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_below="@+id/tv_mp3Title"></ListView>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal">
+        <LinearLayout
+            android:id="@+id/ll_seekbar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <com.h.fileinput.Mp3Media.TextMoveLayout
+                android:id="@+id/tmv_seekbar"
+                android:layout_width="fill_parent"
+                android:layout_height="20dp">
+
+            </com.h.fileinput.Mp3Media.TextMoveLayout>
+            <SeekBar
+                android:id="@+id/musicSeekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxHeight="2dp"
+                android:minHeight="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:progressDrawable="@drawable/seekbar"
+                android:thumb="@drawable/seekbar_thumb" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_currentTime"
+                    android:textColor="@color/text_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_sbDuration"
+                    android:textColor="@color/text_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_mp3player"
+            android:layout_below="@+id/ll_seekbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv_previous"
+                android:src="@drawable/previous"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/iv_repeat"
+                android:layout_toRightOf="@+id/iv_previous"
+                android:src="@drawable/repeat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/iv_player"
+                android:layout_toRightOf="@+id/iv_repeat"
+                android:src="@drawable/player"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/iv_wrap"
+                android:layout_toRightOf="@+id/iv_player"
+                android:src="@drawable/wrap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/iv_next"
+                android:layout_toRightOf="@+id/iv_wrap"
+                android:src="@drawable/next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_mp3player">
+            <TextView
+                android:id="@+id/tv_musicTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_white"/>
+            <!--<Spinner
+                android:id="@+id/warpSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/spinner"
+                android:visibility="gone"
+                android:background="@drawable/wrap"
+                android:prompt="@drawable/wrap_off">
+            </Spinner>-->
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>

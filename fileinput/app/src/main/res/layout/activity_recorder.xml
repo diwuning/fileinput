@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.h.fileinput.videorecorder.RecorderActivity">
+    <com.h.fileinput.videorecorder.MovieRecorderView
+        android:id="@+id/movie_rv"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp">
+
+    </com.h.fileinput.videorecorder.MovieRecorderView>
+    <RelativeLayout
+        android:id="@+id/record_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/movie_rv"
+        android:gravity="center"
+        android:layout_centerInParent="true">
+        <Button
+            android:id="@+id/start_btn"
+            android:text="开始"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/stop_btn"
+            android:layout_toRightOf="@+id/start_btn"
+            android:text="停止"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/take_btn"
+            android:layout_toRightOf="@+id/stop_btn"
+            android:text="拍照"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <SurfaceView
+        android:id="@+id/play_surfaseV"
+        android:layout_below="@+id/record_rl"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp" />
+    <RelativeLayout
+        android:id="@+id/play_rl"
+        android:layout_below="@+id/play_surfaseV"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/play_btn"
+            android:text="播放"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/pause_btn"
+            android:text="暂停"
+            android:layout_toRightOf="@+id/play_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</RelativeLayout>

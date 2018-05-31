@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:gravity="center_horizontal"
+    tools:context="com.h.fileinput.weixinrecorder.WeixinRecordActivity">
+    <com.h.fileinput.weixinrecorder.MovieRecorderView
+        android:id="@+id/mrv_wx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </com.h.fileinput.weixinrecorder.MovieRecorderView>
+    <com.h.fileinput.recorder.LineView
+        android:id="@+id/lv_wx"
+        android:layout_width="match_parent"
+        android:background="#ffffff"
+        android:layout_alignBottom="@+id/mrv_wx"
+        android:layout_marginBottom="5dp"
+        android:layout_centerInParent="true"
+        android:layout_height="2dp" />
+    <RelativeLayout
+        android:id="@+id/rl_wx"
+        android:layout_below="@+id/mrv_wx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+        <ImageView
+            android:id="@+id/iv_wx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btn_record"/>
+        <TextView
+            android:id="@+id/tv_wx"
+            android:text="开始拍摄"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <com.h.fileinput.camera.CircleProgressView
+        android:id="@+id/circleProgress"
+        android:visibility="gone"
+        android:layout_width="60dp"
+        android:layout_height="60dp" />
+
+</RelativeLayout>

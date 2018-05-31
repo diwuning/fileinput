@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fl_content" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_takeBack"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/msg_camera_back"
+            android:layout_width="22dp"
+            android:layout_height="22dp" />
+        <ImageView
+            android:id="@+id/iv_turn"
+            android:src="@drawable/camare_change"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_width="22dp"
+            android:layout_height="22dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/buttonLayout"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/show_time"
+            android:text="点击拍照，长按摄像"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/text_white"
+            android:layout_marginBottom="10dp"
+            android:layout_above="@+id/take_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <!-- 拍照按钮 -->
+        <Button
+            android:id="@+id/take_pic"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/msg_camera_take"
+            />
+        <com.h.fileinput.weixinrecorder.CircleProgressView
+            android:id="@+id/circleProgress"
+            android:visibility="gone"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+    </RelativeLayout>
+</FrameLayout>

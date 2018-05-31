@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fileinput.iml" filepath="$PROJECT_DIR$/fileinput.iml" />
+      <module fileurl="file://$PROJECT_DIR$/greendao/greendao.iml" filepath="$PROJECT_DIR$/greendao/greendao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/llll/llll.iml" filepath="$PROJECT_DIR$/llll/llll.iml" />
+      <module fileurl="file://$PROJECT_DIR$/llll/mylibrary/mylibrary.iml" filepath="$PROJECT_DIR$/llll/mylibrary/mylibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/llll/ripple/ripple.iml" filepath="$PROJECT_DIR$/llll/ripple/ripple.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sugartest/sugartest.iml" filepath="$PROJECT_DIR$/sugartest/sugartest.iml" />
+    </modules>
+  </component>
+</project>
