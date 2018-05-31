@@ -16,7 +16,9 @@ import android.widget.LinearLayout;
 
 import com.h.fileinput.R;
 import com.h.fileinput.fontmanager.FontManageDemoActivity;
-
+/*
+* 仿ios home键
+* */
 public class FloatMenuActivity extends AppCompatActivity {
     private static final String TAG = "FloatMenuActivity";
 

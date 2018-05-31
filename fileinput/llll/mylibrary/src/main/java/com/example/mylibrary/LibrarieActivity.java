@@ -14,7 +14,9 @@ import com.baidu.location.LocationClientOption;
 import com.baidu.location.Poi;
 
 import java.util.List;
-
+/*
+* 百度地图
+* */
 public class LibrarieActivity extends AppCompatActivity {
     TextView tv_lib;
     Button btn_back;
