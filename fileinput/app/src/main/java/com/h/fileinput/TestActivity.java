@@ -21,6 +21,7 @@ import com.example.mylibrary.LibrarieActivity;
 import com.h.fileinput.AnalyzeHtml.AnalyzeHtmlActivity;
 import com.h.fileinput.EasyRecyclerView.CommonRecyclerActivity;
 import com.h.fileinput.FragmentPager.FragmentPagerActivity;
+import com.h.fileinput.Glin.GlinDemoActivity;
 import com.h.fileinput.GridAnimator.GridAnimteDemoActivity;
 import com.h.fileinput.ListGridView.ListGridActivity;
 import com.h.fileinput.Mp3Media.MpsPlayerActivity;
@@ -329,6 +330,16 @@ public class TestActivity extends Activity {
             public void onClick(View v) {
 //                Intent intent = new Intent(TestActivity.this, UserInfoActivity.class);
                 Intent intent = new Intent(TestActivity.this, ListGridActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //Glin
+        Button btn_Glin = (Button) findViewById(R.id.btn_Glin);
+        btn_Glin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TestActivity.this, GlinDemoActivity.class);
                 startActivity(intent);
             }
         });

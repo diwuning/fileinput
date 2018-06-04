@@ -229,7 +229,8 @@
             android:theme="@style/CardView.Dark" />
         <activity android:name=".ListGridView.ListGridActivity" />
         <activity android:name=".FragmentPager.FragmentPagerActivity" />
-        <activity android:name=".FragmentPager.MainFragmentActivity"></activity>
+        <activity android:name=".FragmentPager.MainFragmentActivity" />
+        <activity android:name=".Glin.GlinDemoActivity"></activity>
     </application>
 
 </manifest>
