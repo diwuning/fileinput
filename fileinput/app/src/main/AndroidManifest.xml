@@ -230,7 +230,11 @@
         <activity android:name=".ListGridView.ListGridActivity" />
         <activity android:name=".FragmentPager.FragmentPagerActivity" />
         <activity android:name=".FragmentPager.MainFragmentActivity" />
-        <activity android:name=".Glin.GlinDemoActivity"></activity>
+        <activity android:name=".Glin.GlinDemoActivity" />
+        <activity android:name=".weixinpay.WeixinPayDemoActivity"></activity>
+        <activity android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop"></activity>
     </application>
 
 </manifest>

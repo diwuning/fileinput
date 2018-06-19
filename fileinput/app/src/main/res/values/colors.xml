@@ -11,4 +11,7 @@
     <color name="text_black">#000000</color>
     <color name="text_gray">#424242</color>
     <color name="color_orange">#ffa000</color>
+
+    <color name="navpage">#FFE1E8EB</color>
+
 </resources>

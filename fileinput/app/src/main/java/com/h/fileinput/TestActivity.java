@@ -45,6 +45,7 @@ import com.h.fileinput.userinfo.UserInfoActivity;
 import com.h.fileinput.video.SurfaceActivity;
 import com.h.fileinput.videorecorder.RecorderActivity;
 import com.h.fileinput.webviewvideo.WebViewVideoDemoActivity;
+import com.h.fileinput.weixinpay.WeixinPayDemoActivity;
 import com.h.fileinput.weixinrecorder.TakePicActivity;
 
 import java.io.IOException;
@@ -219,6 +220,15 @@ public class TestActivity extends Activity {
             public void onClick(View view) {
                 Intent intent = new Intent(TestActivity.this, FragmentPagerActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        Button btn_wxPay = (Button) findViewById(R.id.btn_wxPay);
+        btn_wxPay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent payIntent = new Intent(TestActivity.this, WeixinPayDemoActivity.class);
+                startActivity(payIntent);
             }
         });
     }

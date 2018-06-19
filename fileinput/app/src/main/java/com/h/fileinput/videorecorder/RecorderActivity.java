@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 
 import com.h.fileinput.R;
@@ -27,6 +29,10 @@ public class RecorderActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recorder);
+        //防止截屏
+        Window window = getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_SECURE);
+
         initViews();
         initEvents();
         init();

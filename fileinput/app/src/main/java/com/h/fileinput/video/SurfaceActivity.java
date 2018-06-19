@@ -90,7 +90,10 @@ public class SurfaceActivity extends Activity implements SurfaceHolder.Callback 
         });
         List<VideoInfo>  videoInfos = MediaUtil.getVideoList(getApplicationContext());
         Toast.makeText(getApplicationContext(),videoInfos.size()+"",Toast.LENGTH_SHORT).show();
-        videoInfo = videoInfos.get(1);
+        if(videoInfos != null && videoInfos.size() !=0){
+            videoInfo = videoInfos.get(1);
+        }
+
 
         //点击播放画面会显示进度条，再点击一次，进度条消失
         rl_videoSeek = (RelativeLayout)findViewById(R.id.rl_videoSeek);
@@ -113,6 +116,7 @@ public class SurfaceActivity extends Activity implements SurfaceHolder.Callback 
         tv_videoEnd = (TextView)findViewById(R.id.tv_videoEnd);
         videoStart = 0;
         videoEnd = videoInfo.duration;
+//        videoEnd = 0;
         totalNum = videoEnd - videoStart;
         screenWidth = getWindowManager().getDefaultDisplay().getWidth();
         moveStep = screenWidth/totalNum;
@@ -131,6 +135,9 @@ public class SurfaceActivity extends Activity implements SurfaceHolder.Callback 
 
         //截屏
         iv_shot = (ImageView)findViewById(R.id.iv_shot);
+        if(videoInfo == null){
+            iv_shot.setEnabled(false);
+        }
         iv_shot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -208,7 +215,13 @@ public class SurfaceActivity extends Activity implements SurfaceHolder.Callback 
     private void play(long currentTime){
         player.reset();
         try {
-            player.setDataSource(videoInfo.path);
+            String path = "";
+            if(videoInfo == null){
+               path = "http://line.xcook.cn:8888/CookbookResourcePlatform-api/v1/cookbook/cookbook.playurl.get";
+            }else{
+                path = videoInfo.path;
+            }
+            player.setDataSource(path);
             player.prepare();
             player.setOnPreparedListener(new VideoOnPreparedLisenter(currentTime));
             videoHandler.sendEmptyMessage(1);
