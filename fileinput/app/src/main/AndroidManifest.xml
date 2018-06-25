@@ -231,10 +231,12 @@
         <activity android:name=".FragmentPager.FragmentPagerActivity" />
         <activity android:name=".FragmentPager.MainFragmentActivity" />
         <activity android:name=".Glin.GlinDemoActivity" />
-        <activity android:name=".weixinpay.WeixinPayDemoActivity"></activity>
-        <activity android:name=".wxapi.WXPayEntryActivity"
+        <activity android:name=".weixinpay.WeixinPayDemoActivity" />
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
             android:exported="true"
-            android:launchMode="singleTop"></activity>
+            android:launchMode="singleTop" />
+        <activity android:name=".FlycoTabLayout.SlideTabActivity"></activity>
     </application>
 
 </manifest>

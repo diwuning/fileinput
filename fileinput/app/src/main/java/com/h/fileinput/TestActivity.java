@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.example.mylibrary.LibrarieActivity;
 import com.h.fileinput.AnalyzeHtml.AnalyzeHtmlActivity;
 import com.h.fileinput.EasyRecyclerView.CommonRecyclerActivity;
+import com.h.fileinput.FlycoTabLayout.SlideTabActivity;
 import com.h.fileinput.FragmentPager.FragmentPagerActivity;
 import com.h.fileinput.Glin.GlinDemoActivity;
 import com.h.fileinput.GridAnimator.GridAnimteDemoActivity;
@@ -214,6 +215,7 @@ public class TestActivity extends Activity {
     }
 
     public void initView1(){
+        //多个fragment滑动切换
         btn_fragment = (Button) findViewById(R.id.btn_fragment);
         btn_fragment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -223,12 +225,23 @@ public class TestActivity extends Activity {
             }
         });
 
+        //微信支付
         Button btn_wxPay = (Button) findViewById(R.id.btn_wxPay);
         btn_wxPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent payIntent = new Intent(TestActivity.this, WeixinPayDemoActivity.class);
                 startActivity(payIntent);
+            }
+        });
+
+        //滑动选项导航卡
+        Button btn_slideTab = (Button) findViewById(R.id.btn_slideTab);
+        btn_slideTab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent slideIntent = new Intent(TestActivity.this, SlideTabActivity.class);
+                startActivity(slideIntent);
             }
         });
     }

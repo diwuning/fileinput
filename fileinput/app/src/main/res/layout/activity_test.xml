@@ -188,6 +188,17 @@
             android:layout_height="wrap_content" />
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_slideTab"
+            android:text="SlideTablayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
     <SurfaceView
         android:id="@+id/sfv_display2"
         android:layout_width="match_parent"
