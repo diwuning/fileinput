@@ -2,6 +2,7 @@ package com.h.fileinput.Glin;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -9,6 +10,7 @@ import com.h.fileinput.Glin.adapter.BookListAdapter;
 import com.h.fileinput.Glin.bean.Book;
 import com.h.fileinput.Glin.bean.BookEntity;
 import com.h.fileinput.R;
+import com.h.fileinput.widget.EmptyView;
 
 import org.loader.glin.Callback;
 import org.loader.glin.Glin;
@@ -17,16 +19,20 @@ import org.loader.glin.call.Call;
 
 import java.util.List;
 
-public class GlinDemoActivity extends AppCompatActivity {
+public class GlinDemoActivity extends AppCompatActivity implements EmptyView.RetryListener {
     String baseUrl = "https://api.douban.com/v2/";
     BookListAdapter listAdapter;
     ListView lv_bookList;
+    EmptyView emptyView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_glin_demo);
         lv_bookList = (ListView) findViewById(R.id.lv_bookList);
+        LinearLayout ll_panel = (LinearLayout) findViewById(R.id.ll_panel);
+        emptyView = ViewHelper.f(this,R.id.emptyview);
+        emptyView.bind(ll_panel).setRetryListener(this);
         commRequest();
     }
 
@@ -43,6 +49,7 @@ public class GlinDemoActivity extends AppCompatActivity {
                     lv_bookList.setAdapter(listAdapter);
                 }else{
                     Toast.makeText(GlinDemoActivity.this,"error",Toast.LENGTH_SHORT).show();
+                    emptyView.errorNet();
                 }
             }
         });
@@ -64,5 +71,11 @@ public class GlinDemoActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public void retry() {
+//        Toast.makeText(GlinDemoActivity.this,"1111111",Toast.LENGTH_SHORT).show();
+        commRequest();
     }
 }

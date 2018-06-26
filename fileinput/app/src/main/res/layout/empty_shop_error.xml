@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true">
+
+        <ImageView
+            android:id="@+id/iv_error"
+            android:layout_width="240px"
+            android:layout_height="240px"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/icon_error" />
+
+        <TextView
+            android:id="@+id/tv_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_error"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30px"
+            android:text="网络请求失败，请检查网络设置"
+            android:textColor="@color/text_gray"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/empty_errnet_btn"
+            android:layout_width="420px"
+            android:layout_height="120px"
+            android:layout_below="@id/tv_error"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60px"
+            android:background="@drawable/shape_order_orange"
+            android:gravity="center"
+            android:text="重新加载"
+            android:textColor="@color/color_orange"
+            android:textSize="18sp" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -4,12 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.h.fileinput.Glin.GlinDemoActivity">
-    <ListView
-        android:id="@+id/lv_bookList"
+    <LinearLayout
+        android:id="@+id/ll_panel"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <ListView
+            android:id="@+id/lv_bookList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    </ListView>
+        </ListView>
+    </LinearLayout>
+
+    <com.h.fileinput.widget.EmptyView
+        android:id="@+id/emptyview"
+        app:errornet_layout="@layout/empty_shop_error"
+        app:loading_layout="@layout/empty_shop_loading"
+        app:nodata_layout="@layout/empty_shop_nodata"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.h.fileinput.widget.EmptyView>
 
 </LinearLayout>
