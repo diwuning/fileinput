@@ -182,8 +182,8 @@ public class TestActivity extends Activity {
         btn_mainAddr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent barIntent = new Intent(TestActivity.this, LibrarieActivity.class);
-                Intent barIntent = new Intent(TestActivity.this, DragTopDemoActivity.class);
+                Intent barIntent = new Intent(TestActivity.this, LibrarieActivity.class);
+//                Intent barIntent = new Intent(TestActivity.this, DragTopDemoActivity.class);
                 barIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(barIntent);
             }

@@ -91,7 +91,7 @@ public class SurfaceActivity extends Activity implements SurfaceHolder.Callback 
         List<VideoInfo>  videoInfos = MediaUtil.getVideoList(getApplicationContext());
         Toast.makeText(getApplicationContext(),videoInfos.size()+"",Toast.LENGTH_SHORT).show();
         if(videoInfos != null && videoInfos.size() !=0){
-            videoInfo = videoInfos.get(1);
+            videoInfo = videoInfos.get(0);
         }
 
 
